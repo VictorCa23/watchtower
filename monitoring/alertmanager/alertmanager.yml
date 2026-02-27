@@ -1,0 +1,15 @@
+﻿global:
+  resolve_timeout: 5m
+
+route:
+  group_by: [alertname, severity]
+  group_wait: 10s
+  group_interval: 30s
+  repeat_interval: 1h
+  receiver: watchtower-webhook
+
+receivers:
+  - name: watchtower-webhook
+    webhook_configs:
+      - url: http://backend:3001/webhook-alerts
+        send_resolved: true
