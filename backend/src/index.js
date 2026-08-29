@@ -6,8 +6,12 @@ const https = require("https");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN || "8633352089:AAH0sbfJr9iiJJCHuMZCLmLSpH4i-xj99rg";
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "1595766651";
+const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
+  console.warn("⚠️  TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no estan configurados como variables de entorno.");
+}
 
 app.use(cors());
 app.use(express.json());
