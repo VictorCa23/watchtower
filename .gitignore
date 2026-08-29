@@ -9,3 +9,6 @@ frontend/build/
 
 # Archivos del sistema operativo
 .DS_Store
+
+.claude/
+Documentación/
