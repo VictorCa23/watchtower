@@ -1,0 +1,11 @@
+# Variables de entorno con secretos
+.env
+
+# Dependencias
+node_modules/
+
+# Build de producción del frontend
+frontend/build/
+
+# Archivos del sistema operativo
+.DS_Store
